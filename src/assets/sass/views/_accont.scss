@@ -1,0 +1,33 @@
+.accont {
+    color: #202020E6;
+
+    .container {
+        background-color: #ffffff;
+    }
+    &-title {
+        font-size: 25px;
+        padding: 15px;
+        font-weight: bold;
+    }
+
+    & .card-accont {
+        border: solid 1px $purple;
+        padding: 15px;
+        border-radius: 10px;
+
+        &-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: $purple;
+        }
+        & label {
+            color: $purple;
+            font-weight: bold;
+        }
+
+        & input {
+            border: solid 1px $purple;
+            border-radius: 15px;
+        }
+    }
+}

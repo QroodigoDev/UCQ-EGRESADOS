@@ -1,0 +1,84 @@
+body {
+    font-family: 'Lato';
+    font-style: normal;
+    font-variant: normal;
+}
+
+.table-adelantazo {
+    & th {
+        font-size: 14px;
+        color: #202020E6;
+        font-weight: bold;
+    }
+    & td {
+        border-top: solid 2px #DDD4F1;
+    }
+}
+
+.btn-purple {
+    color: #ffffff;
+    background-color: $purple;
+    padding: 5px 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-orange {
+    color: #ffffff;
+    background-color: $orange;
+    padding: 5px 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+// Estilos para tabla
+.vgt-wrap {
+    .vgt-table {
+        font-size: 14px !important;
+    }
+}
+.vs__dropdown-toggle {
+    background: #ffffff !important;
+}
+.table-tr-red {
+    background-color: #ffedeb;
+}
+.center {
+    text-align: center;
+}
+.align-middle {
+    vertical-align: middle;
+}
+.right {
+    text-align: right;
+}
+
+// estilos para VueCarousel
+.VueCarousel-pagination {
+    margin-top: -50px;
+}
+
+// Menu 
+.header .header-container .nav-right .dropdown-menu > li > a {
+    line-height: 1.5;
+    min-height: auto;
+    padding: 0px 0px !important;
+    text-decoration: none;
+    color: #202020E6;
+}
+
+// estilos para modal
+.close-modal {
+    color: #FB4842;
+    font-size: 24px;
+    font-weight: 900;
+    margin-right: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.reset-pass a {
+    color: $purple;
+}

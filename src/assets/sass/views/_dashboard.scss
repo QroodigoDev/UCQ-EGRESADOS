@@ -1,0 +1,89 @@
+.dashboard {
+    color: #35495e;
+
+    & .multiselect__tags {
+        border: 0px;
+        background: transparent;
+    }
+    & .multiselect__input, .multiselect__single {
+        background-color: transparent;
+        font-size: 24px;
+        padding-left: 0px;
+    }
+
+    & input.multiselect__input {
+        font-size: 18px
+    }
+    & .multiselect__tags {
+        padding-left: 0px;
+    }
+
+    .container {
+        background-color: #ffffff;
+    }
+    &-title {
+        font-size: 25px;
+        padding: 10px 15px 0px 15px;
+        font-weight: bold;
+    }
+    &-welcome {
+        color: #6841BF;
+        font-size: 20px;
+    }
+    & .balance {
+        &-card {
+            background-color: #6841BF1A;
+            margin-right: -15px;
+            margin-left: -15px;
+            padding: 5px 30px;
+        }
+        &-date {
+            font-size: 24px;
+            font-weight: 600;
+            width: 200px;
+        }
+        &-label {
+            font-size: 20px;
+        }
+        &-amount {
+            font-size: 30px;
+            font-weight: 600;
+            padding-right: 60px;
+        }
+    }
+    & a {
+        color: $purple;
+    }
+    & b {
+        font-size: 18px;
+    }
+    & .graphics {
+        text-align: center;
+        padding-bottom: 25px;
+
+        & svg {
+            font-size: 150px;
+            padding-bottom: 15px;
+            color: #6841BF1A;
+        }
+        & span {
+            color: #a8a8a8;
+        }
+    }
+
+    & .chartjs-render-monitor {
+        max-height: 320px !important;
+    }
+
+    & .progress {
+        height: 15px;
+    }
+    & .bg-success {
+        background-color: $purple !important;
+    }
+    & .nodata-alert {
+        padding: 50px;
+        font-size: 30px;
+        color: #a8a8a8;
+    }
+}

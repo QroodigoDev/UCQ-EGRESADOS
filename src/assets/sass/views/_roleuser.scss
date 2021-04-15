@@ -1,0 +1,41 @@
+.roleuser {
+    .img-roleuser {
+        width: 90%;
+    }
+    .banner-roleuser {
+        background-color: #FCFCFC;
+    }
+    .title-roleuser {
+        padding-top: 42px;
+        width: 90%;
+        display:block;
+        margin:auto;
+        font-size: 36px;
+        color: currentColor;
+        line-height: 50px;
+        transition: all 200ms ease;
+        font-weight: 500;
+        font-family: 'UberMove', 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    }
+    .text-select {
+        line-height: 44px;
+        font-size: 36px;
+        width: 90%;
+        padding-bottom: 40px;
+        border-bottom: 2px solid black;
+        padding-top: 60px;
+        cursor: pointer;
+        & svg {
+            margin-top: 10px;
+            font-size: 30px;
+            color: #6841BF;
+        }
+        & svg:hover {
+            color: #202020E6;
+        }
+        & a {
+            text-decoration: none;
+            color:#202020E6;;
+        }
+    }
+}

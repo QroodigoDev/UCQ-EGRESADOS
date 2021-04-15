@@ -1,0 +1,343 @@
+.landing {
+    // background-color: #6841bf;
+    & .menu {
+        width: 100%;
+        background: linear-gradient(#7dac3e 85%,#fff 0);
+        color: #ffffff;
+        font-size: 20px;
+        height: 80px;
+    }
+
+    ///// Header
+    & .start-header {
+        height: 630px;
+        width: 100%;
+        // padding-top: 20px;
+        margin-bottom: 200px;
+
+        & .card {
+            z-index: 1000;
+            max-width: 768px;
+            display:block;
+            margin:auto;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            margin-top: 15px;
+            margin-bottom: 30px;
+
+            & .card-title img {
+                display:block;
+                margin:auto;
+                margin-top: -100px;
+                background-color: #FFFF;
+                border-radius: 100%;
+                padding: 15px;
+            }
+            & .text-muted img {
+                display:block;
+                margin:auto;
+                width: 90%; 
+            }
+            & ul { 
+                padding-left: 0px;
+                width: 250px;
+                display:block;
+                margin:auto;
+                list-style-type: none;
+                & li {
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+
+                }
+            }
+            & .btn-go {
+                display:block;
+                margin:auto;
+                max-width: 150px;
+                background-color: #EC5B24;
+                text-align: center;
+                color: #ffffff;
+                border-radius: 15px;
+                font-size: 18px;
+                font-weight: 600;
+                padding: 3px;
+            }   
+            & .card-body {
+                z-index: 2000;
+                & .card-subtitle {
+                    margin-bottom: 10px;
+                }
+                & .vertical-alingn-left {
+                    width: 300px;
+                    vertical-align: top;
+                    display: inline-block;
+                }
+                & .vertical-alingn-right {
+                    width: 300px;
+                    border-left:#f5ad91 1px solid;
+                    padding-left: 20px;
+                    vertical-align: top;
+                    display: inline-block;
+                }
+            }
+        }
+        & .banner-text {
+            padding-top: 30px;
+            color: #503691;
+            font-size: 22px;
+            font-weight: bold;
+            width: 270px;
+            padding-right: 80px;
+            display:block;
+            margin:auto;
+            text-align: right;
+        }
+    }
+
+    ///// app-store 
+    & .app-store {
+        padding-top: 50px;
+        margin-top: -100px;
+
+        & .app-movil {
+            background-color: blue;
+            & img {
+                width: 96%;
+            }
+        }
+        & .app-shop {
+            & img {
+                position:absolute;
+                bottom:15px;
+                left:0px;
+                width: 96%;
+            }
+        }
+        & .app-store {
+            padding-top: 20%;
+           
+            & .text-center {
+                font-size: 18px;
+            }
+            & img {
+                width: 80%;
+            }
+        }
+        & .store {
+            margin-right: auto;
+            align-items: center;
+            & img {
+                width: 50%;
+            }
+        }
+        & .quuestions {
+          & h3 {
+            color: #503691;
+            // font-weight: 600;
+            font-size: 37ox;
+          }
+          .bold {
+              font-weight: bold;
+          }
+        }
+    }
+
+    ///// benefits
+    .benefits {
+        height: 740px;
+        margin-top: 100px;
+        & img {
+            width: 20%;
+            display:block;
+            margin:auto;
+        }
+        & .icon-convenient {
+            width: 25%;
+            display:block;
+            margin:auto;
+        }
+        & .description {
+            max-width: 200px;
+            margin:auto;
+        }
+        & .descriptionXD {
+            max-width: 250px;
+        }
+        .benefits-text {
+            width: 100%;
+            & .benefits-list { 
+                width: 280px;
+                display:block;
+                margin:auto;
+
+                & .number-list {
+                    width: 32px;
+                    height: 32px;
+                    text-align: center;
+                    border: solid 2px #EC5B24;
+                    border-radius: 40px;
+                    font-size: 20px;
+                    color: #EC5B24;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+                & .title-list {
+                    color: #503691;
+                    font-size: 22px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    
+    .requirements {
+        background-color: #F7F5FC;
+        & img {
+            width: 60%;
+        }
+        & h3 {
+            color: #503691;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        & .vertical-alingn-right {
+            width: 500px;
+            // border-left:#f5ad91 1px solid;
+            // padding-left: 20px;
+            // vertical-align: top;
+            // display: inline-block;
+        }
+    }
+
+    .useAdelantazo {
+        margin:auto;
+        margin-top: 100px !important;
+        height: 1529px;
+
+        & img {
+            width: 100%;
+        }
+        & .divBtn {
+            margin-top: -62px;
+        }
+        & .registerBtn {
+            width: 380px;
+            height: 52px;
+            border-radius: 10px;
+            margin: auto;
+            background-color: #EC5B24;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    }
+    ///// integration
+    .integration {
+        background-color: #F7F5FC;
+        margin-top: 300px;
+        & .about_us-info {
+            height: 100%;
+            display:block;
+            margin:auto;
+            padding: 30px;
+            & h3 {
+                color: #503691;
+                font-size: 32px;
+                font-weight: 700; 
+            }
+            & span {
+                font-size: 24px;
+                font-weight: 400;
+                color: black;
+                font-weight: bold;
+            }
+        }
+        img {
+            width: 110%;
+        }
+    }
+
+    ///// about_us
+    .about_us {
+        background-color: #F7F5FC;
+        & .about_us-info {
+            color: #503691;
+            height: 100%;
+            display:block;
+            margin:auto;
+            padding: 30px;
+
+            & h3 {
+                font-size: 19px;
+                font-weight: 700; 
+            }
+            & span {
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+        img {
+            width: 90%;
+        }
+    }
+
+    ///// Partner
+    & .partner {
+        & .partner-icon {
+            width: 100%;
+            & img { 
+                display:block;
+                margin:auto;
+            }
+        }
+        & .banner-adelantazo img {
+            width: 90%;
+        }
+        & .contend-partner-list {
+            width: 100%;
+            & div { 
+                width: 280px;
+                display:block;
+                margin:auto;
+            }
+            & ul { 
+                padding-left: 0px;
+                width: 280px;
+                display:block;
+                margin:auto;
+                list-style-type: none;
+                & li {
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    
+                }
+            }
+        }
+        .btn-go {
+            max-width: 150px;
+            background-color: #EC5B24;
+            text-align: center;
+            color: #ffffff;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 3px;
+        }
+        .text-signup {
+            & a {
+                color: #503691;
+                text-decoration: none;
+            }
+        }
+        
+    }
+    ///// Footer
+    & footer {
+        background-color: rgb(0, 48, 86);
+        color: #ffffff;
+        & .copy {
+            margin-top: 70px;
+            font-size: 13px;
+            vertical-align: middle;
+        }
+    }
+}
