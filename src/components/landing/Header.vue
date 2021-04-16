@@ -149,12 +149,16 @@ export default {
     },
     async addEgresado () {
       try {
+        const nameCarrera = this.$_.find(this.carreras, (column) => {
+          return parseInt(column.id) === parseInt(this.career.id)
+        })
         const items = {
           function: 'addEgresado',
           name: this.name,
           lastname: this.lastname,
           lastname2: this.lastname2,
           career: this.career.id,
+          careerName: nameCarrera.nombre.trim(),
           email: this.email,
           phone: this.phone,
           generation: this.generation,
@@ -186,16 +190,19 @@ export default {
           password: this.loginPassword
         })
         const login = await this.signIn(params)
-        console.log('Login login', login, login.authenticated && login.forceResetPassword)
+        console.log('Login login', login, login.authenticated)
         if (login.authenticated && login.admin) {
           this.$router.push({ name: 'dashboard' })
         } else if (login.authenticated && !login.admin && !login.complete) {
           this.$router.push({ name: 'complete' })
+        } else if (login.authenticated && login.complete) {
+          this.$router.push({ name: 'egresados' })
         } else {
           this.showError('Usuario o contraseña incorretos, intentalo de nuevo.')
         }
         this.isLoading = false
       } catch (error) {
+        console.log(error)
         this.isLoading = false
         this.showError(error.message)
       }

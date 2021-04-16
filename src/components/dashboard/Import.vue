@@ -2,6 +2,7 @@
 <template>
 <div @drop="_drop" @dragenter="_suppress" @dragover="_suppress">
   <div class="row"><div class="col-xs-12">
+    {{data}}
     <form class="form-inline">
       <div class="form-group">
         <label for="file">Spreadsheet</label>
@@ -48,13 +49,17 @@ export default {
     return {
       data: ['SheetJS'.split(''), '1234567'.split('')],
       cols: [
-        { name: 'A', key: 0 },
-        { name: 'B', key: 1 },
-        { name: 'C', key: 2 },
-        { name: 'D', key: 3 },
-        { name: 'E', key: 4 },
-        { name: 'F', key: 5 },
-        { name: 'G', key: 6 }
+        { name: 'MATRICULA', key: 0 },
+        { name: 'NOMBRE', key: 1 },
+        { name: 'AP', key: 2 },
+        { name: 'AM', key: 3 },
+        { name: 'CARRERA', key: 4 },
+        { name: 'TIPO', key: 5 },
+        { name: 'SEXO', key: 6 },
+        { name: 'EMAIL', key: 7 },
+        { name: 'EMAIL2', key: 8 },
+        { name: 'CURP', key: 9 },
+        { name: 'GENERACION', key: 10 }
       ],
       SheetJSFT: _SheetJSFT,
       files: []
@@ -102,15 +107,40 @@ export default {
     },
     async save () {
       try {
+        const imtems = []
+        this.data.forEach(element => {
+          const matricula = element[0] === undefined ? 'SIN DATO' : element[0]
+          const nombre = element[1] === undefined ? 'SIN DATO' : element[1]
+          const ap = element[2] === undefined ? 'SIN DATO' : element[2]
+          const am = element[3] === undefined ? 'SIN DATO' : element[3]
+          const carrera = element[4] === undefined ? 'SIN DATO' : element[4]
+          const tipoCarrera = element[5] === undefined ? 'SIN DATO' : element[5]
+          const sexo = element[6] === undefined ? 'SIN DATO' : element[6]
+          const email = element[7] === undefined ? 'SIN DATO' : element[7]
+          const emailUcq = element[8] === undefined ? 'SIN DATO' : element[8]
+          const curp = element[9] === undefined ? 'SIN DATO' : element[9]
+          const generacion = element[10] === undefined ? 'SIN DATO' : element[10]
+          imtems.push({
+            matricula: matricula,
+            nombre: nombre,
+            ap: ap,
+            am: am,
+            carrera: carrera,
+            tipo_carrera: tipoCarrera,
+            sexo: sexo,
+            email: email,
+            email_ucq: emailUcq,
+            curp: curp,
+            generacion: generacion
+          })
+        })
+        console.log(imtems)
         const params = await this.toFormData({
           function: 'setEgresados',
-          data: JSON.stringify(this.files)
+          data: JSON.stringify(imtems)
         })
         const response = await axiosAdelaService.post('/', params)
-        console.log(response.data)
-        if (response.status === 200) {
-          this.items = response.data
-        }
+        console.log('* * * ***** RESPUESTA SERVIDOR', response.data)
       } catch (error) {
         this.isLoading = false
         this.showError(error.message)

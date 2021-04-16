@@ -30,16 +30,43 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
-  components: {
+  data () {
+    return {
+      exist: false,
+      class_show_menu: ''
+    }
+  },
+  computed: {
+    ...mapGetters({
+      user: 'getUser'
+    })
   },
   mounted () {
     console.log('La resolución de tu pantalla es: ' + screen.width + ' x ' + screen.height)
+    if (this.user.nombre !== '') {
+      this.exist = true
+    }
   },
   methods: {
+    ...mapActions({
+      signOut: 'signOut'
+    }),
     openModal () {
       this.$modal.show('login')
+    },
+    showMenu () {
+      if (this.class_show_menu === '') {
+        this.class_show_menu = 'show'
+      } else {
+        this.class_show_menu = ''
+      }
+    },
+    logout () {
+      this.signOut()
+      this.$router.push({ name: 'start' })
     }
   }
 }

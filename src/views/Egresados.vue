@@ -1,5 +1,11 @@
 <template>
   <div class="accont">
+    <div class="col-1 ml-5 salirDiv" style="">
+      <a class="dropdown-item" @click.prevent="logout">
+        Salir
+        <!-- <font-awesome-icon :icon="['fal', 'sign-out']" /> -->
+      </a>
+    </div>
     <div class="container transparentDiv mt-5" style="padding-bottom:100px;">
         <div class="row">
             <div class="col-12 text-center">
@@ -18,14 +24,18 @@
         </div>
         <div class="row">
             <div class="col-6 text-center">
+              <a href="https://www.ucq.edu.mx/uc/maestrias-y-diplomados" target="_blank">
                 <figure class="mt-5 displayInlineX">
-                    <img src="@/assets/img/uc-preparado.png" width="60%" alt="Guerrero  Egresado">
+                  <img src="@/assets/img/uc-preparado.png" width="60%" alt="Guerrero  Egresado">
                 </figure>
+              </a>
             </div>
             <div class="col-6 text-center">
+              <a href="https://www.facebook.com/groups/4572306639461540/?ref=share" target="_blank">
                 <figure class="mt-5 displayInlineX">
-                    <img src="@/assets/img/red-facebook.png" width="60%" alt="Guerrero  Egresado">
+                  <img src="@/assets/img/red-facebook.png" width="60%" alt="Guerrero  Egresado">
                 </figure>
+              </a>
             </div>
         </div>
         <div class="row">
@@ -37,29 +47,30 @@
         </div>
         <div class="row">
             <div class="col-12 text-center mt-5">
-                <b-col lg="6" class="my-1">
-                    <b-form-group
-                    label="Filter"
-                    label-for="filter-input"
-                    label-cols-sm="3"
-                    label-align-sm="right"
-                    label-size="sm"
-                    class="mb-0">
-                    <b-input-group size="sm">
-                        <b-form-input
-                        id="filter-input"
-                        v-model="filter"
-                        type="search"
-                        placeholder="Type to Search"
-                        ></b-form-input>
+              <b-col lg="6" class="my-1">
+        <b-form-group
+          label="Filter"
+          label-for="filter-input"
+          label-cols-sm="3"
+          label-align-sm="right"
+          label-size="sm"
+          class="mb-0"
+        >
+          <b-input-group size="sm">
+            <b-form-input
+              id="filter-input"
+              v-model="filter"
+              type="search"
+              placeholder="Type to Search"
+            ></b-form-input>
 
-                        <b-input-group-append>
-                        <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
-                        </b-input-group-append>
-                    </b-input-group>
-                    </b-form-group>
-                </b-col>
-                <b-table :items="items" :fields="fields" striped responsive="sm" @filtered="onFiltered">
+            <b-input-group-append>
+              <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
+            </b-input-group-append>
+          </b-input-group>
+        </b-form-group>
+      </b-col>
+                <b-table :items="items" :fields="fields" striped responsive="sm" @filtered="onFiltered" :filter="filter">
                     <template #cell(actions)="row">
                         <b-button size="sm" @click="row.toggleDetails">
                             {{ row.detailsShowing ? 'Ocultar' : 'Mostrar' }} Details
@@ -119,7 +130,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import formatData from '@/mixins/formatAxios'
 import axiosAdelaService from '@/axios/axiosAdelaService'
 import {
@@ -169,9 +180,20 @@ export default {
   computed: {
     ...mapGetters({
       user: 'getUser'
-    })
+    }),
+    sortOptions () {
+      // Create an options list from our fields
+      return this.fields
+        .filter(f => f.sortable)
+        .map(f => {
+          return { text: f.label, value: f.key }
+        })
+    }
   },
   methods: {
+    ...mapActions({
+      signOut: 'signOut'
+    }),
     handleFileUpload () {
       this.file = this.$refs.file.files[0]
       console.log(this.file)
@@ -212,6 +234,10 @@ export default {
       // Trigger pagination to update the number of buttons/pages due to filtering
       this.totalRows = filteredItems.length
       this.currentPage = 1
+    },
+    logout () {
+      this.signOut()
+      this.$router.push({ name: 'start' })
     }
   },
   mounted () {
@@ -247,5 +273,9 @@ export default {
 .cardEgresado {
     background: #0a3356;
     color: white;
+}
+.salirDiv {
+  margin-top: -100px;
+  margin-bottom: 100px;
 }
 </style>
