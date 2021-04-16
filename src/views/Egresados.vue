@@ -196,7 +196,6 @@ export default {
     }),
     handleFileUpload () {
       this.file = this.$refs.file.files[0]
-      console.log(this.file)
     },
     async saveChanges () {
       try {
@@ -208,8 +207,7 @@ export default {
           about: this.about,
           image: this.file
         })
-        const response = await axiosAdelaService.post('/', params)
-        console.log('updateEgresado', response)
+        await axiosAdelaService.post('/', params)
       } catch (error) {
         this.isLoading = false
         this.showError(error.message)
@@ -221,7 +219,6 @@ export default {
           function: 'getEgresado'
         })
         const response = await axiosAdelaService.post('/', params)
-        console.log(response.data)
         if (response.status === 200) {
           this.items = response.data
         }

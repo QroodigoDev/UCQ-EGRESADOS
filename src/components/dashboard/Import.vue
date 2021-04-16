@@ -2,7 +2,6 @@
 <template>
 <div @drop="_drop" @dragenter="_suppress" @dragover="_suppress">
   <div class="row"><div class="col-xs-12">
-    {{data}}
     <form class="form-inline">
       <div class="form-group">
         <label for="file">Spreadsheet</label>
@@ -134,13 +133,18 @@ export default {
             generacion: generacion
           })
         })
-        console.log(imtems)
         const params = await this.toFormData({
           function: 'setEgresados',
           data: JSON.stringify(imtems)
         })
         const response = await axiosAdelaService.post('/', params)
-        console.log('* * * ***** RESPUESTA SERVIDOR', response.data)
+        if (response.data) {
+          this.$toastedPush({
+            message: 'Se cargo la lista de egresados correctamente',
+            type: 'success'
+          })
+          this.$router.push({ name: 'importarList' })
+        }
       } catch (error) {
         this.isLoading = false
         this.showError(error.message)

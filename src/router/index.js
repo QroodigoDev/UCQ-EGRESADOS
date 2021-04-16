@@ -44,7 +44,7 @@ const routes = [
       },
       {
         path: '/principal/listaEgresados',
-        name: 'importar',
+        name: 'importarList',
         component: () => import('@/components/dashboard/Charts.vue')
       },
       {

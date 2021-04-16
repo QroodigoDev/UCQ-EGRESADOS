@@ -138,12 +138,10 @@ export default {
         }
         const params = await this.toFormData(items)
         const response = await axiosAdelaService.post('/', params)
-        console.log('getCarreras', response)
         if (response.status === 200) {
           this.carreras = response.data
         }
       } catch (error) {
-        console.log(error)
         this.showError('No se pudieron obtener las carreras intentalo mas tarde.')
       }
     },
@@ -166,7 +164,6 @@ export default {
         }
         const params = await this.toFormData(items)
         const response = await axiosAdelaService.post('/', params)
-        console.log('addEgresado', response)
         if (response.status === 200) {
           if (response.data.error !== undefined) {
             this.showError(response.data.error)
@@ -178,7 +175,6 @@ export default {
           }
         }
       } catch (error) {
-        console.log(error)
         this.showError('No se pudo agregar el egresado, intentalo mas tarde.')
       }
     },
@@ -190,7 +186,6 @@ export default {
           password: this.loginPassword
         })
         const login = await this.signIn(params)
-        console.log('Login login', login, login.authenticated)
         if (login.authenticated && login.admin) {
           this.$router.push({ name: 'dashboard' })
         } else if (login.authenticated && !login.admin && !login.complete) {
@@ -202,7 +197,6 @@ export default {
         }
         this.isLoading = false
       } catch (error) {
-        console.log(error)
         this.isLoading = false
         this.showError(error.message)
       }

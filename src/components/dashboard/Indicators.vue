@@ -107,7 +107,6 @@ export default {
           function: 'getEgresado'
         })
         const response = await axiosAdelaService.post('/', params)
-        console.log('getEgresados', response.data)
         if (response.status === 200) {
           this.rows = response.data
         }
