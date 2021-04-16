@@ -168,13 +168,21 @@ export default {
           if (response.data.error !== undefined) {
             this.showError(response.data.error)
           } else {
-            this.$toastedPush({
-              message: 'Egresado agregado correctamente',
-              type: 'success'
-            })
+            if (response.data.verificado === 1) {
+              this.$toastedPush({
+                message: 'Egresado agregado correctamente',
+                type: 'success'
+              })
+            } else {
+              this.$toastedPush({
+                message: 'Upps no logramos ubicarte, pero no te preocupes alguien se pondra en contacto contigo para solucionar el problema',
+                type: 'success'
+              })
+            }
           }
         }
       } catch (error) {
+        console.log(error)
         this.showError('No se pudo agregar el egresado, intentalo mas tarde.')
       }
     },
