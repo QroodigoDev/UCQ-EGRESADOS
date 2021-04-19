@@ -53,6 +53,7 @@ export default {
         { name: 'AP', key: 2 },
         { name: 'AM', key: 3 },
         { name: 'CARRERA', key: 4 },
+        { name: 'TIPO CARRERA', key: 4 },
         { name: 'TIPO', key: 5 },
         { name: 'SEXO', key: 6 },
         { name: 'EMAIL', key: 7 },

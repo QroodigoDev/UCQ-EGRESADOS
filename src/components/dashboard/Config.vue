@@ -3,7 +3,6 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    {{user}}
                 <h5 class="card-title">{{user.fullname}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Configuracion de Egresado</h6>
                 <img :src="'http://ucq.edu.mx/qroodigo/images/' + user.foto" width="60%" :alt="user.fullname">
@@ -114,7 +113,7 @@
                         </div>
                         <div class="card-body">
                             <button class="btn btn-purple mr-4" @click="resetPassword">Reset Password</button>
-                            <button class="btn btn-purple mr-4" @click="suspended">Suspender Egresado</button>
+                            <button class="btn btn-purple mr-4" @click="suspended">{{user.active === '1' ? 'Suspender Egresado' : 'Activar Egresado' }}</button>
                             <button class="btn btn-purple mr-4" @click="deleteEgresado">Eliminar Egresado</button>
                         </div>
                     </div>
@@ -143,7 +142,6 @@ export default {
         }
         const params = await this.toFormData(items)
         const response = await axiosAdelaService.post('/', params)
-        console.log('getCarreras', response)
         if (response.status === 200) {
           this.carreras = response.data
         }
@@ -169,7 +167,6 @@ export default {
           id: this.user.id
         })
         const response = await axiosAdelaService.post('/', params)
-        console.log('updateInfoAdmin', response)
         if (response.status === 200) {
           this.$toastedPush({
             message: 'Egresado actualizado',
@@ -200,17 +197,23 @@ export default {
     },
     async suspended () {
       try {
+        let act = 1
+        if (+this.user.active) {
+          act = 0
+        }
         const params = await this.toFormData({
           function: 'suspender',
-          active: this.user.active,
+          active: act,
           id: this.user.id
         })
         const response = await axiosAdelaService.post('/', params)
         if (response.status === 200) {
+          const msg = this.user.active === '1' ? 'Egresado Suspendido' : 'Se activo el egresado correctamente'
           this.$toastedPush({
-            message: 'Egresado suspendido',
+            message: msg,
             type: 'success'
           })
+          this.$router.push({ name: 'dashboard' })
         }
       } catch (error) {
         console.log(error)
@@ -236,7 +239,6 @@ export default {
     }
   },
   mounted () {
-    console.log('Parametros de usuario', this.$route.params)
     this.user = this.$route.params.row
     this.getCarreras()
   }
