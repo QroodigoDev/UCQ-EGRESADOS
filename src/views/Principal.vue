@@ -18,7 +18,7 @@
                   </div>
                   <div class="peer">
                     <div class="logo">
-                      <h5 class="mt-3">EGRESADOS UCQ</h5>
+                      <h5 class="mt-3">UCQ-ADMIN</h5>
                       <!-- <img
                         class="lazyload img-text"
                         src="@/assets/img/logo-adelantazo-texto.png"
@@ -47,7 +47,7 @@
             exact-active-class="sidebar-active-link"
           >
             <span class="icon-holder">
-              <font-awesome-icon :icon="['fal', 'home']" />
+              <font-awesome-icon :icon="['fa', 'home']" />
             </span>
             <span class="title">Egresados</span>
           </b-nav-item>
@@ -58,7 +58,7 @@
             exact-active-class="sidebar-active-link"
           >
             <span class="icon-holder">
-              <font-awesome-icon :icon="['fal', 'file-chart-line']" />
+              <font-awesome-icon :icon="['fa', 'cloud-upload-alt']" />
             </span>
             <span class="title">Importar Egresados</span>
           </b-nav-item>
@@ -74,7 +74,7 @@
           <ul class="nav-left">
             <li>
               <a id="sidebar-toggle" class="sidebar-toggle" @click="sideBarTogle = !sideBarTogle">
-                <font-awesome-icon :icon="['fal', 'bars']" />
+                <font-awesome-icon :icon="['fa', 'bars']" />
               </a>
             </li>
           </ul>
@@ -89,14 +89,14 @@
                 aria-expanded="false"
                 @click.prevent="showMenu"
               >
-                <font-awesome-icon :icon="['fal', 'user']" />
+                <font-awesome-icon :icon="['fa', 'user']" />
                 {{ userName }}
               </a>
               <div :class="'dropdown-menu ' + class_show_menu" aria-labelledby="navbarDropdown">
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" @click.prevent="logout">
                   Salir
-                  <font-awesome-icon :icon="['fal', 'sign-out']" />
+                  <font-awesome-icon :icon="['fa', 'sign-out-alt']" />
                 </a>
               </div>
             </li>
@@ -181,4 +181,8 @@ export default {
 </script>
 
 <style lang="scss">
+.c-grey-600 {
+  background:  #7dac3e;
+  height: 100px;
+}
 </style>

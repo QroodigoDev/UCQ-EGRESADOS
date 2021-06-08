@@ -6,71 +6,97 @@
         <!-- <font-awesome-icon :icon="['fal', 'sign-out']" /> -->
       </a>
     </div>
-    <div class="container transparentDiv mt-5" style="padding-bottom:100px;">
+    <!-- // transparentDiv -->
+    <div class="container-fluid mt-5" style="padding-bottom:100px;">
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-md-10 col-sm-12 col-lg-12 col-xs-12 text-center">
                 <figure>
-                    <img src="@/assets/img/red-de-egresados.svg" alt="Red de egresados" width="40%">
+                    <img src="@/assets/img/red-de-egresados.svg" class="imgEgresados" alt="Red de egresados" width="40%">
                 </figure>
                 <figure class="col-10 mt-5 text-right">
-                    <img src="@/assets/img/guerrero-egresado.svg" width="20%" alt="Guerrero  Egresado">
+                    <img src="@/assets/img/guerrero-egresado.svg" class="imgEgresados2" width="20%" alt="Guerrero  Egresado">
                 </figure>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 text-center bg-gray">
-                <p><strong>Comienza a reconectar con tus ex compañeros de generación</strong>, y recibe todos los beneficios que la Universidad Cuauhtémoc tiene para ti. No olvides unirte al grupo privado de Guerreros Egresados. </p>
+        <div class="row text-center">
+            <div class="col-12 text-center">
+                <p class="textHeaderXD GothamBook"><b class="GothamBlack">Comienza a reconectar con tus ex compañeros</b> de generación, y recibe todos los beneficios que la Universidad Cuauhtémoc tiene para ti. No olvides unirte al grupo privado de Guerreros Egresados. </p>
             </div>
         </div>
         <div class="row">
-            <div class="col-6 text-center">
+            <div class="col-6 text-center socialMedia1">
               <a href="https://www.ucq.edu.mx/uc/maestrias-y-diplomados" target="_blank">
                 <figure class="mt-5 displayInlineX">
-                  <img src="@/assets/img/uc-preparado.png" width="60%" alt="Guerrero  Egresado">
+                  <img src="@/assets/img/uc-preparado.png" class="imgSocialMedia" width="60%" alt="Guerrero  Egresado">
                 </figure>
               </a>
             </div>
-            <div class="col-6 text-center">
+            <div class="col-6 text-center socialMedia2">
               <a href="https://www.facebook.com/groups/4572306639461540/?ref=share" target="_blank">
                 <figure class="mt-5 displayInlineX">
-                  <img src="@/assets/img/red-facebook.png" width="60%" alt="Guerrero  Egresado">
+                  <img src="@/assets/img/red-facebook.png" class="imgSocialMedia" width="60%" alt="Guerrero  Egresado">
                 </figure>
               </a>
             </div>
         </div>
+        <div class="row franjaAzul"></div>
         <div class="row">
-            <div class="col-12 text-center rec mt-5">
-                <h2>RECONECTA</h2>
-                <h3>CON TU GENERACIÓN</h3>
-                <h3>-</h3>
+            <div class="col-12 rec mt-5 ml-5">
+                <h2 class="GothamUltra">RECONECTA</h2>
+                <h3 class="GothamBold">CON TU GENERACIÓN</h3>
+                <h3 class="GothamBold">-</h3>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 text-center mt-5">
-              <b-col lg="6" class="my-1">
-        <b-form-group
-          label="Filter"
-          label-for="filter-input"
-          label-cols-sm="3"
-          label-align-sm="right"
-          label-size="sm"
-          class="mb-0"
-        >
-          <b-input-group size="sm">
-            <b-form-input
-              id="filter-input"
-              v-model="filter"
-              type="search"
-              placeholder="Type to Search"
-            ></b-form-input>
+        <div class="row justify-content-end">
+            <b-col lg="6" class="my-1 inputFilter text-rigth">
+                <b-form-group
+                  label=""
+                  label-for="filter-input"
+                  label-cols-sm="3"
+                  label-align-sm="right"
+                  label-size="sm"
+                  class="mb-0"
+                >
+                  <b-input-group size="sm">
+                    <b-form-input
+                      id="filter-input"
+                      v-model="filter"
+                      type="search"
+                      placeholder="Busca a tus compañeros"
+                      class="searchInput GothamItalik"
+                    ></b-form-input>
 
-            <b-input-group-append>
-              <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
-            </b-input-group-append>
-          </b-input-group>
-        </b-form-group>
-      </b-col>
-                <b-table :items="items" :fields="fields" striped responsive="sm" @filtered="onFiltered" :filter="filter">
+                    <b-input-group-append>
+                      <b-button class="btnfilter" :disabled="!filter" @click="filter = ''">
+                        <font-awesome-icon :icon="['fa', 'search']" class="fa-2x"/>
+                      </b-button>
+                    </b-input-group-append>
+                  </b-input-group>
+                </b-form-group>
+              </b-col>
+          </div>
+        <div class="row">
+            <div class="col-12 mt-5">
+                <b-table :items="items" :fields="fields" striped responsive="sm" :tbody-tr-class="'GothamBlack'" @filtered="onFiltered" :filter="filter">
+                  <template #cell(contact)="row" class="text-center">
+                    <div class="row text-center">
+                      <div class="col-2 text-center">
+                        <a :href="row.item.facebook" target="_blank">
+                          <img src="@/assets/img/facebook.svg" alt="mail" class="ziseImage">
+                        </a>
+                      </div>
+                      <div class="col-2 text-center">
+                        <a :href="row.item.linkedin" target="_blank">
+                            <img src="@/assets/img/link.svg" alt="mail" class="ziseImage">
+                        </a>
+                      </div>
+                      <div class="col-2 text-center">
+                        <a :href="row.item.email" target="_blank">
+                            <img src="@/assets/img/mail.svg" alt="mail" class="ziseImage">
+                        </a>
+                      </div>
+                    </div>
+                  </template>
                     <template #cell(actions)="row">
                         <b-button size="sm" @click="row.toggleDetails">
                             {{ row.detailsShowing ? 'Ocultar' : 'Mostrar' }} Details
@@ -84,36 +110,36 @@
                                         <img :src="'http://ucq.edu.mx/qroodigo/images/' + row.item.foto" width="100%" :alt="row.item.fullname">
                                     </div>
                                 <div class="col-md-9">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h2>{{row.item.fullname}}</h2>
-                                            <h3>{{row.item.carrera}}</h3>
-                                            <h3>{{row.item.generacion}}</h3>
-                                            <h2>Acerca de mí:</h2>
-                                            <p><b>{{row.item.descripcion}}</b></p>
+                                    <div class="row text-left">
+                                        <div class="col-12 fontInfoUser">
+                                            <h2 class="GothamBlack">{{row.item.fullname}}</h2>
+                                            <h3 class="GothamBook">{{row.item.carrera}}</h3>
+                                            <h3 class="GothamBook">{{row.item.generacion}}</h3>
+                                            <h2 class="GothamBlack">Acerca de mí:</h2>
+                                            <p><b class="GothamBook">{{row.item.descripcion}}</b></p>
                                         </div>
                                         <div class="col-md-6 mt-3">
                                             <a :href="row.item.facebook" target="_blank" class="row">
                                                 <div class="col-2">
                                                     <img src="@/assets/img/facebook.svg" alt="mail" class="w-100">
                                                 </div>
-                                                <div class="col-10"> {{row.item.facebook}} </div>
+                                                <div class="col-10 mt-4 GothamBook"> {{row.item.facebook}} </div>
                                             </a>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-6 mt-3">
                                             <a :href="row.item.linkedin" target="_blank" class="row">
                                                 <div class="col-2">
                                                     <img src="@/assets/img/link.svg" alt="mail" class="w-100">
                                                 </div>
-                                                <div class="col-10"> {{row.item.linkedin}} </div>
+                                                <div class="col-10 mt-4 GothamBook"> {{row.item.linkedin}} </div>
                                             </a>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-6 mt-3">
                                             <a :href="row.item.email" target="_blank" class="row">
                                                 <div class="col-2">
                                                     <img src="@/assets/img/mail.svg" alt="mail" class="w-100">
                                                 </div>
-                                                <div class="col-10"> {{row.item.email}} </div>
+                                                <div class="col-10 mt-4 GothamBook"> {{row.item.email}} </div>
                                             </a>
                                         </div>
                                     </div>
@@ -171,7 +197,7 @@ export default {
           label: 'Generacion',
           sortable: true
         },
-        { key: 'contact', label: 'Contacto', sortable: true, class: 'text-center' },
+        { key: 'contact', label: 'Contacto' },
         { key: 'actions', label: 'Actions' }],
       items: [],
       filter: null
@@ -244,6 +270,42 @@ export default {
 }
 </script>
 <style>
+.ziseImage {
+  width: 30px;
+}
+.fontInfoUser p, h3{
+  font-size: 25px;
+}
+.fontInfoUser h2{
+  font-size: 28px;
+}
+.table-responsive-sm th {
+  font-family: "Gotham-Black";
+  background: #7DAC3E !important;
+  color: white;
+  height: 60px;
+}
+.table-responsive-sm td {
+  color: #002C55;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background: #B1B1B1 !important;
+}
+.table-striped tbody tr {
+  background: #F0F0F0 !important;
+}
+.franjaAzul {
+  height: 70px;
+  background: #0a3356;
+}
+.textHeaderXD {
+  margin: auto;
+  width: 90%;
+  background: #f0f0f0;
+  color: #0A3356;
+  font-size: 25px;
+  line-height: 1;
+}
 .bg-gray {
     background-color: #f0f0f0;
     text-align: justify;
@@ -274,5 +336,49 @@ export default {
 .salirDiv {
   margin-top: -100px;
   margin-bottom: 100px;
+}
+.socialMedia1 {
+  /* background: #0A3356; */
+}
+.socialMedia2 {
+  background: #7DAC3E;
+}
+.inputFilter {
+  border-radius: 20px;
+  border-color: #0A3356;
+}
+.searchInput::placeholder {
+  color: #0A3356;
+}
+.searchInput {
+  border: 4px solid;
+  border-radius: 20px !important;
+  border-color: #0A3356 !important;
+}
+.btnfilter {
+  border: 2px;
+  color: #002C55 !important;
+  border-color: #0A3356 !important;
+  background: transparent !important;
+}
+@media only screen and (max-width: 375px) {
+  .transparentDiv p {
+    font-size: 18px;
+  }
+  .imgEgresados {
+    width: 90%;
+  }
+  .imgEgresados2 {
+    width: 60%;
+  }
+  .imgSocialMedia {
+    width: 100%;
+  }
+  .rec h2 {
+    font-size: 10vw;
+  }
+  .rec h3 {
+    font-size: 5vw;
+  }
 }
 </style>

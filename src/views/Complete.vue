@@ -2,16 +2,16 @@
   <div class="accont">
     <div class="container-fluid bg-01 mt-5" style="padding-bottom:100px;">
     <div class="row">
-        <div class="col-md-5 offset-md-1 mt-5">
+        <div class="col-md-5 offset-md-1 mt-5 fontblack">
             <figure>
                 <img src="@/assets/img/red-de-egresados.svg" alt="Red de egresados" width="80%">
             </figure>
-            <strong>¡Bienvenido Guerrero (a)! Esta plataforma es para ti. </strong>
+            <strong><b class="GothamBlack">¡Bienvenido Guerrero (a)! Esta plataforma es para ti.</b></strong>
             <p>Completa tu registro y podrás ponerte en contacto con tus ex compañeros de generación. También podrás ingresar al grupo privado en Facebook, donde podrás generar vínculos de negocio con otros egresados. </p>
 
             <p>Formar parte de la Red de Egresados, tiene grandes beneficios para ti, eventos especiales, cursos de educación continua, descuentos y becas para posgrados y muchas cosas más que te ayudarán a continuar con tu desarrollo profesional.</p>
 
-            <figure>
+            <figure class="imagenGuerrero">
                 <img src="@/assets/img/guerrero-egresado.svg" width="50%" alt="Guerrero  Egresado">
             </figure>
         </div>
@@ -21,15 +21,16 @@
                     <div class="row">
                         <div class="col-md-10">
                             <div class="col-12 form3"><br>
-                                <h2 class="text-center">COMPLETA TUS DATOS</h2>
-                                <h3 class="text-center">PARA TU PERFÍL</h3>
+                                <h2 class="text-center GothamUltra">COMPLETA TUS DATOS</h2>
+                                <h3 class="text-center textGreen GothamBold">PARA TU PERFÍL</h3>
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-4">
                                                 <label>Foto de perfil</label>
                                             </div>
                                             <div class="col-7">
-                                                <input type="file" id="file" ref="file" name="foto" class="form-control" v-on:change="handleFileUpload()" required>
+                                                <input type="email" :placeholder="placeholderX" class="form-control clickInput" @click="subirFoto" readonly>
+                                                <input type="file" id="file" ref="file" name="foto" style="display:none" class="form-control inputForm3 GothamLight" v-on:change="handleFileUpload()" required>
                                             </div>
                                         </div>
                                     </div>
@@ -39,7 +40,7 @@
                                                 <label>Correo electrónico</label>
                                             </div>
                                             <div class="col-7">
-                                                <input type="email" v-model="email" class="form-control" readonly>
+                                                <input type="email" v-model="email" class="form-control inputForm3 GothamLight" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -49,7 +50,7 @@
                                                 <label>Perfil de Linkedind</label>
                                             </div>
                                             <div class="col-7">
-                                                <input type="text" v-model="linkedind" class="form-control" required>
+                                                <input type="text" v-model="linkedind" class="form-control inputForm3 GothamLight" required>
                                             </div>
                                         </div>
                                     </div>
@@ -59,7 +60,7 @@
                                                 <label>Perfil de Facebook</label>
                                             </div>
                                             <div class="col-7">
-                                                <input type="text" v-model="facebook" class="form-control" required>
+                                                <input type="text" v-model="facebook" class="form-control inputForm3 GothamLight" required>
                                             </div>
                                         </div>
                                     </div>
@@ -69,17 +70,17 @@
                                                 <label>Sobre mí</label>
                                             </div>
                                             <div class="col-7">
-                                                <textarea class="form-control" v-model="about" placeholder="¿Que busco en la Red de Egresados?" rows="3" required></textarea>
+                                                <textarea class="form-control inputForm3 GothamItalik" v-model="about" placeholder="¿Que busco en la Red de Egresados?" rows="3" required></textarea>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-2 text-right p-0">
-                                                <input type="checkbox" style="transform: scale(2);" required>
+                                                <input type="checkbox" class="checkbox inputForm3 GothamLight" style="transform: scale(2);" required>
                                             </div>
                                             <div class="col-9 text-center">
-                                                <p class="aviso"> Al  subir tus fotografías e información aceptas el uso de mi imagen para esta plataforma, así como el uso de mis datos para el envío de información. Para mayor información puede acceder al aviso de privacidad integral través de la dirección <a href="http://www.ucq.edu.mx " target="_blank">http://www.ucq.edu.mx</a> en el apartado de contacto, opción Aviso de Privacidad en el <a href="http://www.ucq.edu.mx " target="_blank">link</a>.</p>
+                                                <p class="aviso GothamItalik">Acepto el uso de mi imagen para esta plataforma, así como mis datos para el envío de información.</p>
                                                 <button class="btnClick" @click="saveChanges">
                                                 <img src="@/assets/img/enviar.svg" width="60%"></button><br><br>
                                             </div>
@@ -109,7 +110,8 @@ export default {
       email: '',
       linkedind: '',
       facebook: '',
-      about: ''
+      about: '',
+      placeholderX: '+ Subir Foto'
     }
   },
   computed: {
@@ -121,6 +123,7 @@ export default {
     handleFileUpload () {
       this.file = this.$refs.file.files[0]
       console.log(this.file)
+      this.placeholderX = this.file.name
     },
     async saveChanges () {
       try {
@@ -144,6 +147,9 @@ export default {
         this.isLoading = false
         this.showError(error.message)
       }
+    },
+    subirFoto () {
+      this.$refs.file.click()
     }
   },
   mounted () {
@@ -169,7 +175,48 @@ export default {
   padding: 0;
   font-family: Book;
 }
+.inputForm3::placeholder {
+  color: white;
+}
+.inputForm3 {
+  background: #6c859a;
+  color: white;
+}
+.form-control:disabled, .form-control[readonly] {
+  background: #6c859a;
+  color: white;
+}
 label {
   margin-left: 3rem;
+}
+.fontblack p, strong {
+  color: #0A3356;
+  font-size: 18px;
+}
+.checkbox {
+  border: white;
+  background: transparent;
+}
+.clickInput::-webkit-input-placeholder {
+  text-align: center;
+  line-height: 100px;/* Centrado vertical */
+  color: white;
+}
+.textGreen {
+  color: #749C40;
+}
+.aviso {
+  font-size: 8px;
+}
+@media only screen and (max-width:850px) {
+  .form3 {
+    font-size: 15px;
+  }
+  label {
+    margin-left: 20px;
+  }
+  .imagenGuerrero {
+    display: none;
+  }
 }
 </style>

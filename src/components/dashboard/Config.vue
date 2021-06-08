@@ -1,11 +1,21 @@
 <template>
     <div class="container">
+      <b-breadcrumb :items="breadcrumb"></b-breadcrumb>
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
                 <h5 class="card-title">{{user.fullname}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Configuracion de Egresado</h6>
-                <img :src="'http://ucq.edu.mx/qroodigo/images/' + user.foto" width="60%" :alt="user.fullname">
+                <h6 class="card-subtitle mb-2 text-muted">Configuración de Egresado</h6>
+                <div class="row">
+                  <div class="col-6">
+                     <img :src="'http://ucq.edu.mx/qroodigo/images/' + user.foto" width="90%" :alt="user.fullname">
+                  </div>
+                </div>
+                <div class="row text-center">
+                  <div class="col-6 mt-2">
+                    <button class="btn btn-purple mr-4" @click="resetImage">Eliminar Imagen</button>
+                  </div>
+                </div>
                 <div class="card mt-5">
                     <div class="card-header">
                     Informacion Basica
@@ -125,13 +135,31 @@
 <script>
 import axiosAdelaService from '@/axios/axiosAdelaService'
 import formatData from '@/mixins/formatAxios'
+import { BBreadcrumb } from 'bootstrap-vue'
 
 export default {
   mixins: [formatData],
+  components: {
+    BBreadcrumb
+  },
   data () {
     return {
       user: [],
-      carreras: []
+      carreras: [],
+      breadcrumb: [
+        {
+          text: 'Tablero',
+          to: { name: 'dashboard' }
+        },
+        {
+          text: 'Egresados',
+          to: { name: 'dashboard' }
+        },
+        {
+          text: 'Lista',
+          active: true
+        }
+      ]
     }
   },
   methods: {
@@ -229,6 +257,24 @@ export default {
         if (response.status === 200) {
           this.$toastedPush({
             message: 'Egresado eliminado',
+            type: 'success'
+          })
+          this.$router.push({ name: 'dashboard' })
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async resetImage () {
+      try {
+        const params = await this.toFormData({
+          function: 'updateImage',
+          id: this.user.id
+        })
+        const response = await axiosAdelaService.post('/', params)
+        if (response.status === 200) {
+          this.$toastedPush({
+            message: 'Imagen actualizada',
             type: 'success'
           })
           this.$router.push({ name: 'dashboard' })

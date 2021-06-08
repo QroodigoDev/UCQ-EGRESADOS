@@ -34,4 +34,34 @@ export default {
 <style lang="scss">
 @import '@/assets/sass/app.scss';
 @import '@/assets/sass/styles/index.scss';
+@font-face {
+  font-family: "Gotham-Medium";
+  src: local("Gotham"),
+   url(./fonts/Gotham-Medium.otf) format("truetype");
+}
+@font-face {
+  font-family: "Gotham-Light";
+  src: local("Gotham"),
+   url(./fonts/Gotham-Light.otf) format("truetype");
+}
+@font-face {
+  font-family: "Gotham-Ultra";
+  src: local("Gotham"),
+   url(./fonts/Gotham-Ultra.otf) format("truetype");
+}
+@font-face {
+  font-family: "Gotham-Italic";
+  src: local("Gotham"),
+   url(./fonts/Gotham-Italic.otf) format("truetype");
+}
+@font-face {
+  font-family: "Gotham-Black";
+  src: local("Gotham"),
+   url(./fonts/Gotham-Black.otf) format("truetype");
+}
+@font-face {
+  font-family: "Gotham-Bold";
+  src: local("Gotham"),
+   url(./fonts/Gotham-Bold.otf) format("truetype");
+}
 </style>

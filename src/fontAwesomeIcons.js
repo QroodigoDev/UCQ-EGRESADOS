@@ -20,6 +20,11 @@ import { faMinusCircle as falMinusCircle } from '@fortawesome/free-solid-svg-ico
 import { faTimes as falTimes } from '@fortawesome/free-solid-svg-icons/faTimes'
 import { faUser as falUser } from '@fortawesome/free-solid-svg-icons/faUser'
 import { faChevronCircleLeft as falChevronCircleLeft } from '@fortawesome/free-solid-svg-icons/faChevronCircleLeft'
+import { faHome as falHome } from '@fortawesome/free-solid-svg-icons/faHome'
+import { faCloudUploadAlt as falCloudUploadAlt } from '@fortawesome/free-solid-svg-icons/faCloudUploadAlt'
+import { faSlidersH as falSlidersH } from '@fortawesome/free-solid-svg-icons/faSlidersH'
+import { faSignOutAlt as falSignOutAlt } from '@fortawesome/free-solid-svg-icons/faSignOutAlt'
+import { faSearch as falSearch } from '@fortawesome/free-solid-svg-icons/faSearch'
 
 export default {
   falUser,
@@ -43,5 +48,10 @@ export default {
   falTimesCircle,
   falUsersCog,
   falMinusCircle,
-  falTimes
+  falTimes,
+  falHome,
+  falCloudUploadAlt,
+  falSlidersH,
+  falSignOutAlt,
+  falSearch
 }

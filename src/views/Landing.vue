@@ -3,7 +3,7 @@
     <template>
       <div class="menu">
         <div class="container">
-          <div class="container-fluid menu text-center">
+          <div class="container menu text-center">
             <img class="lazyload mt-4" width="30%" src="@/assets/img/logoUcq.png" />
           </div>
         </div>
@@ -11,10 +11,10 @@
     </template>
     <router-view class="header-background" />
     <footer>
-      <div class="container text-center mt-3">
+      <div class="text-center">
         <br>
-        <div class="mt-3">
-          <small class="mt-3">
+        <div class="textFooter">
+          <small class="">
             Este espacio tiene como finalidad generar sinergia entre los egresados de la Universidad Cuauhtémoc,
             los datos aquí proporcionados serán utilizados principalmente con este fin.
             En este sitio podrás contactar y ser contactado por tus ex compañeros de generación y de carrera, acceder a contacto inmediato y redes sociales.
@@ -73,13 +73,18 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.textFooter {
+  background: rgb(0, 48, 86);
+  margin-top: -19px;
+}
 .header-background {
+  height: 100%;
     background: url("./../../public/img/fondo1.png") no-repeat;
     background-position: top;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    margin-top: -40px;
+    // margin-top: -40px;
     z-index: 99;
     padding-top: 80px;
   }
@@ -134,6 +139,10 @@ export default {
   .landing {
     & .menu{
       width: 102%;
+      img {
+        margin-top: 30px !important;
+        width: 80%;
+      }
     }
     & footer {
       width: 102%;
@@ -146,6 +155,9 @@ export default {
     color: #202020E6;
     & .menu{
       width: 106%;
+      img {
+        margin-top: 0;
+      }
     }
     & footer {
       width: 108%;
@@ -157,9 +169,6 @@ export default {
   .landing {
     & .menu{
       width: 113%;
-    }
-    & footer {
-      width: 122%;
     }
   }
 }

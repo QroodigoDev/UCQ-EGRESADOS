@@ -1,5 +1,6 @@
 <template>
   <div>
+    <b-breadcrumb :items="breadcrumb"></b-breadcrumb>
     <div class="row mb-3">
       <div class="col-md-12 mt-5 mb-4">
         <router-link
@@ -41,7 +42,7 @@
           </span>
           <span v-else-if="props.column.field == 'actions'">
             <button type="button" class="btn btn-secondary" @click="configureUser(props)">
-              Config
+              <font-awesome-icon :icon="['fa', 'cloud-upload-alt']" />
             </button>
           </span>
         </template>
@@ -52,11 +53,24 @@
 import { mapGetters } from 'vuex'
 import axiosAdelaService from '@/axios/axiosAdelaService'
 import formatData from '@/mixins/formatAxios'
-
+import { BBreadcrumb } from 'bootstrap-vue'
 export default {
   mixins: [formatData],
+  components: {
+    BBreadcrumb
+  },
   data () {
     return {
+      breadcrumb: [
+        {
+          text: 'Tablero',
+          to: { name: 'dashboard' }
+        },
+        {
+          text: 'Egresados',
+          active: true
+        }
+      ],
       rows: [],
       isLoading: false,
       totalRecords: 0,

@@ -1,5 +1,5 @@
 <template lang="html">
-  <div>
+  <div class="versionXD">
     Egresados-UCQ version: <span id="version-local">{{ currentVersion }}</span><span id="version-remote" class="d-none">{{ newVersion }}</span>
   </div>
 </template>
@@ -82,5 +82,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style>
+.versionXD {
+}
 </style>
