@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-10 col-sm-12 col-lg-12 col-xs-12 text-center">
                 <figure>
-                    <img src="@/assets/img/red-de-egresados.svg" class="imgEgresados" alt="Red de egresados" width="40%">
+                    <img src="@/assets/img/red-de-egresados.svg" class="imgEgresados" alt="Red de egresados" width="1133.89">
                 </figure>
                 <figure class="col-10 mt-5 text-right">
                     <img src="@/assets/img/guerrero-egresado.svg" class="imgEgresados2" width="20%" alt="Guerrero  Egresado">
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="row text-center">
-            <div class="col-12 text-center">
+            <div class="col-12 text-center fontpt">
                 <p class="textHeaderXD GothamBook"><b class="GothamBlack">Comienza a reconectar con tus ex compañeros</b> de generación, y recibe todos los beneficios que la Universidad Cuauhtémoc tiene para ti. No olvides unirte al grupo privado de Guerreros Egresados. </p>
             </div>
         </div>
@@ -27,14 +27,14 @@
             <div class="col-6 text-center socialMedia1">
               <a href="https://www.ucq.edu.mx/uc/maestrias-y-diplomados" target="_blank">
                 <figure class="mt-5 displayInlineX">
-                  <img src="@/assets/img/uc-preparado.png" class="imgSocialMedia" width="60%" alt="Guerrero  Egresado">
+                  <img src="@/assets/img/uc-preparado.png" class="imgSocialMedia" width="640px" alt="Guerrero  Egresado">
                 </figure>
               </a>
             </div>
             <div class="col-6 text-center socialMedia2">
               <a href="https://www.facebook.com/groups/4572306639461540/?ref=share" target="_blank">
                 <figure class="mt-5 displayInlineX">
-                  <img src="@/assets/img/red-facebook.png" class="imgSocialMedia" width="60%" alt="Guerrero  Egresado">
+                  <img src="@/assets/img/red-facebook.png" class="imgSocialMedia" width="640px" alt="Guerrero  Egresado">
                 </figure>
               </a>
             </div>
@@ -99,29 +99,29 @@
                   </template>
                     <template #cell(actions)="row">
                         <b-button size="sm" @click="row.toggleDetails">
-                            {{ row.detailsShowing ? 'Ocultar' : 'Mostrar' }} Details
+                            {{ row.detailsShowing ? 'Ocultar' : 'Mostrar' }} Detalles
                         </b-button>
                     </template>
                     <template #row-details="row">
                         <b-card class="cardEgresado">
                             <div class="col-12 card-body">
                                 <div class="row">
-                                    <div class="col-md-3 col-4 offset-md-0 offset-4">
-                                        <img :src="'http://ucq.edu.mx/qroodigo/images/' + row.item.foto" width="100%" :alt="row.item.fullname">
-                                    </div>
-                                <div class="col-md-9">
+                                  <div class="col-4">
+                                    <img :src="'http://ucq.edu.mx/qroodigo/images/' + row.item.foto" width="341px" height="341px" :alt="row.item.fullname">
+                                  </div>
+                                  <div class="col-8">
                                     <div class="row text-left">
                                         <div class="col-12 fontInfoUser">
                                             <h2 class="GothamBlack">{{row.item.fullname}}</h2>
                                             <h3 class="GothamBook">{{row.item.carrera}}</h3>
                                             <h3 class="GothamBook">{{row.item.generacion}}</h3>
-                                            <h2 class="GothamBlack">Acerca de mí:</h2>
+                                            <h2 class="GothamBold">Acerca de mí:</h2>
                                             <p><b class="GothamBook">{{row.item.descripcion}}</b></p>
                                         </div>
                                         <div class="col-md-6 mt-3">
                                             <a :href="row.item.facebook" target="_blank" class="row">
                                                 <div class="col-2">
-                                                    <img src="@/assets/img/facebook.svg" alt="mail" class="w-100">
+                                                    <img src="@/assets/img/facebook.svg" alt="mail" class="w-100" width="52.38">
                                                 </div>
                                                 <div class="col-10 mt-4 GothamBook"> {{row.item.facebook}} </div>
                                             </a>
@@ -129,7 +129,7 @@
                                         <div class="col-md-6 mt-3">
                                             <a :href="row.item.linkedin" target="_blank" class="row">
                                                 <div class="col-2">
-                                                    <img src="@/assets/img/link.svg" alt="mail" class="w-100">
+                                                    <img src="@/assets/img/link.svg" alt="mail" class="w-100" width="52.38">
                                                 </div>
                                                 <div class="col-10 mt-4 GothamBook"> {{row.item.linkedin}} </div>
                                             </a>
@@ -137,7 +137,7 @@
                                         <div class="col-md-6 mt-3">
                                             <a :href="row.item.email" target="_blank" class="row">
                                                 <div class="col-2">
-                                                    <img src="@/assets/img/mail.svg" alt="mail" class="w-100">
+                                                    <img src="@/assets/img/mail.svg" alt="mail" class="w-100" width="52.38">
                                                 </div>
                                                 <div class="col-10 mt-4 GothamBook"> {{row.item.email}} </div>
                                             </a>
@@ -270,6 +270,12 @@ export default {
 }
 </script>
 <style>
+.fontpt {
+  line-height: 1px;
+  height: 222.16px;
+  font-size-adjust: initial;
+  background: #f0f0f0;
+}
 .ziseImage {
   width: 30px;
 }
@@ -284,6 +290,7 @@ export default {
   background: #7DAC3E !important;
   color: white;
   height: 60px;
+  font-size: 30px !important;
 }
 .table-responsive-sm td {
   color: #002C55;
@@ -295,15 +302,16 @@ export default {
   background: #F0F0F0 !important;
 }
 .franjaAzul {
-  height: 70px;
+  height: 79.025px;
   background: #0a3356;
 }
 .textHeaderXD {
   margin: auto;
+  margin-top: 40px;
   width: 90%;
   background: #f0f0f0;
   color: #0A3356;
-  font-size: 25px;
+  font-size: 23pt;
   line-height: 1;
 }
 .bg-gray {
@@ -320,13 +328,15 @@ export default {
 }
 .rec h2 {
     color: #0a3356;
-    font-size: 4vw;
+    /* font-size: 4vw; */
+    font-size: 80.00px;
     font-weight: bolder;
 }
 .rec h3 {
     font-family: Bold;
     color: #749c40;
-    font-size: 2vw;
+    /* font-size: 2vw; */
+    font-size: 42.06px;
     letter-spacing: 2px;
 }
 .cardEgresado {
@@ -344,16 +354,20 @@ export default {
   background: #7DAC3E;
 }
 .inputFilter {
-  border-radius: 20px;
+  height: calc(3.5em + 0.5rem + -6px) !important;
+  border-radius: 45px !important;
   border-color: #0A3356;
+  font-size: 22px !important;
 }
 .searchInput::placeholder {
   color: #0A3356;
 }
 .searchInput {
   border: 4px solid;
-  border-radius: 20px !important;
+  border-radius: 30px !important;
   border-color: #0A3356 !important;
+  height: 65px !important;
+  font-size: 30.613px !important;
 }
 .btnfilter {
   border: 2px;

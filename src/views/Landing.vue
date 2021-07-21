@@ -4,7 +4,7 @@
       <div class="menu">
         <div class="container">
           <div class="container menu text-center">
-            <img class="lazyload mt-4" width="30%" src="@/assets/img/logoUcq.png" />
+            <img class="lazyload mt-4" width="595.2722px" src="@/assets/img/logoUcq.png" />
           </div>
         </div>
       </div>
@@ -73,6 +73,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.menu {
+  height: 139.95px;
+}
 .textFooter {
   background: rgb(0, 48, 86);
   margin-top: -19px;

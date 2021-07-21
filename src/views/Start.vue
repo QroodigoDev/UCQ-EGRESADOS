@@ -1,5 +1,5 @@
 <template>
-  <div class="landing">
+  <div>
     <Header />
     <!-- <Integration/>
     <AppStore />

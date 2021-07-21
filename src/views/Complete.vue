@@ -2,9 +2,9 @@
   <div class="accont">
     <div class="container-fluid bg-01 mt-5" style="padding-bottom:100px;">
     <div class="row">
-        <div class="col-md-5 offset-md-1 mt-5 fontblack">
+        <div class="col-md-5 offset-md-1 mt-5 fontblack ">
             <figure>
-                <img src="@/assets/img/red-de-egresados.svg" alt="Red de egresados" width="80%">
+                <img src="@/assets/img/red-de-egresados.svg" alt="Red de egresados" width="90%">
             </figure>
             <strong><b class="GothamBlack">¡Bienvenido Guerrero (a)! Esta plataforma es para ti.</b></strong>
             <p>Completa tu registro y podrás ponerte en contacto con tus ex compañeros de generación. También podrás ingresar al grupo privado en Facebook, donde podrás generar vínculos de negocio con otros egresados. </p>
@@ -22,11 +22,11 @@
                         <div class="col-md-10">
                             <div class="col-12 form3"><br>
                                 <h2 class="text-center GothamUltra">COMPLETA TUS DATOS</h2>
-                                <h3 class="text-center textGreen GothamBold">PARA TU PERFÍL</h3>
+                                <h3 class="text-center textGreen GothamBold">PARA TU PERFIL</h3>
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-4">
-                                                <label>Foto de perfil</label>
+                                                <label class="GothamLight">Foto de perfil</label>
                                             </div>
                                             <div class="col-7">
                                                 <input type="email" :placeholder="placeholderX" class="form-control clickInput" @click="subirFoto" readonly>
@@ -37,7 +37,7 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-4">
-                                                <label>Correo electrónico</label>
+                                                <label class="GothamLight">Correo electrónico</label>
                                             </div>
                                             <div class="col-7">
                                                 <input type="email" v-model="email" class="form-control inputForm3 GothamLight" readonly>
@@ -47,7 +47,7 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-4">
-                                                <label>Perfil de Linkedind</label>
+                                                <label class="GothamLight">Perfil de Linkedind</label>
                                             </div>
                                             <div class="col-7">
                                                 <input type="text" v-model="linkedind" class="form-control inputForm3 GothamLight" required>
@@ -57,7 +57,7 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-4">
-                                                <label>Perfil de Facebook</label>
+                                                <label class="GothamLight">Perfil de Facebook</label>
                                             </div>
                                             <div class="col-7">
                                                 <input type="text" v-model="facebook" class="form-control inputForm3 GothamLight" required>
@@ -67,7 +67,7 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-4">
-                                                <label>Sobre mí</label>
+                                                <label class="GothamLight">Sobre mí</label>
                                             </div>
                                             <div class="col-7">
                                                 <textarea class="form-control inputForm3 GothamItalik" v-model="about" placeholder="¿Que busco en la Red de Egresados?" rows="3" required></textarea>
@@ -163,6 +163,8 @@ export default {
     background: transparent;
 }
 .form3 {
+  width: 709.07px;
+  height: 613.73px;
   background-image: url("./../../public/img/bf-blue.svg");
   background-position: top;
   background-size: cover;
@@ -191,7 +193,9 @@ label {
 }
 .fontblack p, strong {
   color: #0A3356;
-  font-size: 18px;
+  /* font-size: 18px; */
+  /* font-size: clamp(10px, 1.5vw, 25px); */
+  font-size: 23pt;
 }
 .checkbox {
   border: white;
@@ -206,7 +210,7 @@ label {
   color: #749C40;
 }
 .aviso {
-  font-size: 8px;
+  font-size: 15px;
 }
 @media only screen and (max-width:850px) {
   .form3 {

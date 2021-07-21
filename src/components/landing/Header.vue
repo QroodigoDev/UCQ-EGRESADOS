@@ -3,11 +3,11 @@
     <div class="header-background">
       <div class="container-fluid bg-01" style="padding-bottom:100px;">
         <div class="row textHeader">
-          <div class="col-md-10 col-sm-12 col-lg-6 col-xs-12 ml-5">
+          <div class="col-5 responsiveItems">
             <figure>
-                <img src="@/assets/img/red-de-egresados.svg" alt="Red de egresados" width="80%">
+                <img src="@/assets/img/red-de-egresados.svg" alt="Red de egresados" width="565.3816px">
             </figure>
-            <p class="GothamBook"><b class="GothamBold">¡Hola! La Red de Egresados Cuauhtémoc</b> es una plataforma virtual
+            <p class="GothamBook"><b class="GothamBlack">¡Hola! La Red de Egresados Cuauhtémoc</b> es una plataforma virtual
               donde podrás ponerte en contacto con tus compañeros de
               generación, también podrás recibir todos los beneficios que la
               Universidad Cuauhtémoc ofrece, además de recibir descuentos e
@@ -16,22 +16,22 @@
             </p>
             <p class="GothamBook">
               Cuando llenes el formulario de registro con todos tus datos te llegará
-              <br />un correo de confirmación, con <b>tu contraseña para iniciar sesión.</b>
+              <br />un correo de confirmación, con <b class="GothamBlack">tu contraseña para iniciar sesión.</b>
             </p>
             <ol>
-                <li class="GothamBook"><b class="GothamBold">1. Envía el formulario</b> con todos tus datos.</li>
-                <li class="GothamBook"><b class="GothamBold">2. Recibirás</b> un correo con <b class="GothamBold">tu contraseña.</b></li>
-                <li class="GothamBook"><b class="GothamBold">3. Ingresa a la plataforma</b> para completar tu registro.</li>
-                <li class="GothamBook"><b class="GothamBold">4.</b> Disfruta y <b>reconecta.</b></li>
+                <li class="GothamBook"><b class="GothamBlack">1. Envía el formulario</b> con todos tus datos.</li>
+                <li class="GothamBook"><b class="GothamBlack">2. Recibirás</b> un correo con <b class="GothamBlack">tu contraseña.</b></li>
+                <li class="GothamBook"><b class="GothamBlack">3. Ingresa a la plataforma</b> para completar tu registro.</li>
+                <li class="GothamBook"><b class="GothamBlack">4.</b> Disfruta y <b class="GothamBlack">reconecta.</b></li>
             </ol>
           </div>
-          <div class="col-md-10 col-sm-12 col-lg-5 col-xs-12">
+          <div class="col-7 responsiveItems">
             <div class="row">
               <!--  -->
-              <div class="col-md-10 col-sm-12 col-lg-6 col-xs-12 text-center">
+              <div class="col-6 responsiveItems text-center responsiveItems2" >
                 <div class="form1">
                   <br>
-                  <h2 class="text-center GothamUltra">REGÍSTRATE <br> Y  RECONECTA</h2>
+                  <h2 class="text-center GothamUltra 375">REGÍSTRATE <br> Y  RECONECTA</h2>
                   <h3 class="text-center GothamBold">CON TU GENERACIÓN</h3>
                       <div class="form-group text-center">
                         <input type="text" v-model="name" placeholder="Nombre" class="form-control GothamLight inputFormX" required>
@@ -67,32 +67,31 @@
                           </div>
                         </div>
                       </div> -->
-                      <h2 class="text-center mt-1">Únete a la Red</h2>
+                      <h4 class="text-center mt-1 GothamBold">Únete a la Red</h4>
                       <button class="btnClick" @click="addEgresado">
                         <img src="@/assets/img/enviar.svg" class="w-75">
                       </button>
                   </div>
                 </div>
-                <div class="col-md-10 col-sm-12 col-lg-6 col-xs-12">
+                <div class="col-6 responsiveItems responsiveItems2">
                   <br><br><br><br><br>
-                  <div class="col-12 form2"><br>
-                  <h2 class="text-center GothamUltra">¿YA ERES USUARIO?<br><font style="color:#0a3356;" class="GothamBold">INICIA SESIÓN</font></h2>
+                  <div class="form2 text-center"><br>
+                  <h4 class="text-center GothamUltra">¿YA ERES USUARIO?<br><font style="color:#0a3356;" class="GothamBold">INICIA SESIÓN</font></h4>
                     <div class="form-group">
-                      <input type="email" v-model="loginEmail" placeholder="E-mail" class="form-control inputFormX GothamLight">
+                      <input type="email" v-model="loginEmail" placeholder="Usuario" class="form-control inputFormX GothamLight">
                     </div>
                     <div class="form-group">
-                      <input type="password" v-model="loginPassword" placeholder="Password" class="form-control inputFormX GothamLight" required>
+                      <input type="password" v-model="loginPassword" placeholder="Contraseña" class="form-control inputFormX GothamLight" required>
                     </div>
-                    <br>
-                    <button class="btnClick" @click="login">
+                    <button class="btnClick mt-3" @click="login">
                       <img src="@/assets/img/iniciar.svg" width="60%">
                     </button>
                 </div>
-                <div class="col-12 p-0 text-right mt-5">
-                  <figure>
-                    <img src="@/assets/img/guerrero-egresado.svg" width="70%" alt="Guerrero  Egresado">
-                  </figure>
-                </div>
+              </div>
+              <div class="col-12 p-0 text-right mt-5">
+                <figure>
+                  <img src="@/assets/img/guerrero-egresado.svg" class="imagenGuerreroXD  mr-5" width="323.6495px" alt="Guerrero  Egresado">
+                </figure>
               </div>
             </div>
           </div>
@@ -213,16 +212,21 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  .imagenGuerreroXD {
+    margin-top: 75px !important;
+  }
   .inputFormX {
     width: 90%;
     background: hsla(0,0%,100%,.4);
     margin: auto;
     text-indent: 20px;
+    font-size: 25.49px;
   }
   .textHeader {
     color: #0A3356;
-    // font-size: 23px;
-    font-size: clamp(10px, 1.5vw, 18px);
+    // font-size: 30x;
+    // font-size: clamp(10px, 1.5vw, 25px);
+    font-size: 23pt;
   }
   .ft1 {
     color: white;
@@ -232,7 +236,7 @@ export default {
     background: transparent;
   }
   h2 {
-    font-size: 1.5vw;
+    font-size: 47.64px !important;
     font-family: Ultra;
     color: #fff;
   }
@@ -241,17 +245,32 @@ export default {
     font-family: Bold;
     color: #749c40;
   }
+  h4 {
+    font-size: 27.64px !important;
+    font-family: Ultra;
+    color: #fff;
+  }
   .form1 {
+    width: 493.1226px;
+    height: 641px;
     background-image: url("./../../../public/img/bf-blue.svg");
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
   }
+  .form1 {
+    h3 {
+      font-size: 37.64px !important;
+    }
+  }
   .form2 {
+    width: 417.8839px;
+    height: 314.3864px;
+    float: right;
     background-image: url("./../../../public/img/bg-green.svg");
     background-position: top;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
       color: #0A3356;
@@ -314,7 +333,6 @@ export default {
     height: 280px;
     background-position: left;
   }
-
     @media only screen and (max-width:1920px){
       .medida1 {
         flex: 0 0 55%;
@@ -353,27 +371,22 @@ export default {
     }
 
     @media only screen and (max-width: 1440px) {
+      .form2 {
+        margin-left: 60px;
+        width: 300.8839px;
+      }
+    }
+    @media only screen and (max-width: 1300px) {
       .container-fluid {
-        .medida1 {
-          height: 280px;
-          flex: 0 0 66%;
-          max-width: 66%;
+        .responsiveItems {
+          align-content: center;
+          align-items: center;
+          margin: auto;
         }
-        .medida2 {
-          flex: 0 0 34%;
-          max-width: 34%;
+        .responsiveItems2 {
+          max-width: 100% !important;
         }
-      }
-      .banner-text {
-            padding-top: 30px;
-            color: #503691;
-            font-size: 22px;
-            font-weight: bold;
-            width: 200px;
-            display:block;
-            // margin:auto;
-            text-align: right;
-      }
+     }
     }
 
     @media only screen and (max-width:1180px){
@@ -416,11 +429,25 @@ export default {
           font-size: 15px;
         }
       }
+      .container-fluid {
+        .responsiveItems {
+          max-width: 100% !important;
+        }
+        .responsiveItems2 {
+          max-width: 100% !important;
+          margin:initial;
+        }
+     }
   }
 
   @media only screen and (max-width: 420px) {
     .start-header {
       width: 106%;
+    }
+    .container-fluid {
+      .responsiveItems {
+        max-width: 100% !important;
+      }
     }
   }
 
@@ -433,33 +460,20 @@ export default {
   @media only screen and (max-width:360px) {
     .start-header {
       width: 108%;
-      .card {
-        .card-body {
-          .vertical-alingn-right {
-            border-left:#f5ad91 0px solid;
-            padding-left: 0px;
-          }
-        }
-        .medida2 {
-          background-color: #503691;
-          display: none;
-        }
-      }
-    }
-    .line-baner {
-      position: initial;
-      background: url("./../../../public/img/puntos.svg") no-repeat;
-      height: 280px;
-      background-position: left;
     }
     .container-fluid {
-      // display: none;
+      .responsiveItems {
+        max-width: 100% !important;
+      }
     }
   }
 
   @media only screen and (max-width: 320px) {
     .start-header {
       width: 122%;
+    }
+    .responsiveItems {
+      max-width: 100% !important;
     }
   }
 </style>
